@@ -8,103 +8,58 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Bare - Start Bootstrap Template</title>
+    <title>Background video with overlay image</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <style>
-    body {
-        padding-top: 54px;
-    }
-
-    @media (min-width: 992px) {
-        body {
-            padding-top: 56px;
-        }
-    }
-    /* Temporary navbar container fix */
-
-    .navbar-toggler {
-        z-index: 1;
-    }
-
-    @media (max-width: 576px) {
-        nav > .container {
-            width: 100%;
-        }
-    }
-    </style>
+    <!-- Styles for Video -->
+    <link href="css/video.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
-            <div class="collapse navbar-collapse" id="navbarExample">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<section class="full-size-page">
+<div id="video-overlay" style="background-image:url(images/overlay.jpg);"></div>
+<div class="background-video">
+    <div class="foreground-video">
+        <div id="player"></div>
+    </div>
+</div>
+</section>
 
 
-    <header class="header-page">
-
-      <div id="video-overlay">
-        <div class="background-image" style="background-image:url(http://paolofassoli.com/wp-content/uploads/tuscany-06.jpg);"></div>
-      </div>
-      <div class="background-video">
-        <div class="foreground-video">
-          <div id="player"></div>
-        </div>
-      </div>
-      <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
-      <script type="text/javascript">
-        var player;
-        function onYouTubeIframeAPIReady() {
-          player = new YT.Player('player', {
-            videoId: 'C9pXPFOS4pw',
+<script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+<script type="text/javascript">
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId: 'zFwL301vd4A',
             playerVars: {
-              autoplay: 1,
-              loop: 1,
-              controls: 0,
-              showinfo: 0,
-              autohide: 0,
-              enablejsapi: 1,
-              modestbranding: 1,
-              playlist: 'C9pXPFOS4pw',
-              vq: 'hd1080'
+                autoplay: 1,
+                loop: 1,
+                controls: 0,
+                showinfo: 0,
+                autohide: 0,
+                enablejsapi: 1,
+                modestbranding: 1,
+                playlist: 'zFwL301vd4A',
+                vq: 'hd1080'
             },
             allowfullscreen: 1,
             events: {
-              'onStateChange': onPlayerStateChange
+                'onStateChange': onPlayerStateChange
             }
-          });
-        }
-        function onPlayerStateChange(el) {
-          if(el.data === 1) {
+        });
+    }
+    function onPlayerStateChange(el) {
+        if(el.data === 1) {
             jQuery('#video-overlay').hide();
-          }
         }
-      </script>
-
-    </header>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/tether/tether.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    }
+</script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/tether/tether.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 
